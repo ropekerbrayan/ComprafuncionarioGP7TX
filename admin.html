@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel de Controle</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <style> body { font-family: 'Inter', sans-serif; background-color: #f9fafb; } :root { --brand-primary: #36208a; } </style>
+</head>
+<body class="antialiased text-gray-800">
+    <div class="container mx-auto max-w-5xl p-4 sm:p-6 lg:p-8">
+        <header class="flex justify-between items-center pb-6 border-b border-gray-200 mb-10">
+            <div class="flex items-center space-x-3">
+                <i class="ph-bold ph-gauge text-3xl" style="color: var(--brand-primary);"></i>
+                <h1 class="text-3xl font-bold text-gray-900">Painel de Controle</h1>
+            </div>
+            <a href="index.html" class="text-sm font-medium" style="color: var(--brand-primary);">Sair e Voltar ao Portal</a>
+        </header>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <a href="admin-gerenciamento.html" class="group bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all">
+                <div class="flex items-center space-x-4">
+                    <div class="flex-shrink-0 flex items-center justify-center h-16 w-16 bg-indigo-100 rounded-full"><i class="ph-bold ph-wrench text-3xl" style="color: var(--brand-primary);"></i></div>
+                    <div><h2 class="text-2xl font-bold text-gray-900">Gerenciamento</h2><p class="text-gray-600 mt-1">Gerencie produtos, usuários e a integração com o Google Sheets.</p></div>
+                </div>
+            </a>
+            <a href="admin-pedidos.html" class="group bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all">
+                <div class="flex items-center space-x-4">
+                    <div class="flex-shrink-0 flex items-center justify-center h-16 w-16 bg-indigo-100 rounded-full"><i class="ph-bold ph-archive text-3xl" style="color: var(--brand-primary);"></i></div>
+                    <div><h2 class="text-2xl font-bold text-gray-900">Histórico de Pedidos</h2><p class="text-gray-600 mt-1">Visualize e altere o status de todos os pedidos realizados.</p></div>
+                </div>
+            </a>
+        </div>
+    </div>
+</body>
+</html>

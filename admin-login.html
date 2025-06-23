@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login de Administrador</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <style> body { font-family: 'Inter', sans-serif; background-color: #f9fafb; } :root { --brand-primary: #36208a; } </style>
+</head>
+<body class="antialiased text-gray-800">
+    <div class="min-h-screen flex items-center justify-center p-4">
+        <div class="bg-white p-8 rounded-lg shadow-xl w-full max-w-sm">
+            <div class="flex flex-col items-center mb-6">
+                <i class="ph-bold ph-gear-six text-5xl" style="color: var(--brand-primary);"></i>
+                <h2 class="text-2xl font-bold mt-4">Acesso Restrito</h2>
+                <p class="text-gray-600">Área exclusiva para administradores.</p>
+            </div>
+            <label for="password-input" class="block text-sm font-medium text-gray-700">Senha de Administrador</label>
+            <input type="password" id="password-input" class="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
+            <button id="password-submit" class="mt-4 w-full text-white font-bold py-2 px-4 rounded-lg" style="background-color: var(--brand-primary);">Entrar</button>
+            <p id="password-error" class="text-red-500 text-sm mt-2 text-center hidden">Senha incorreta.</p>
+            <div class="text-center mt-6">
+                <a href="index.html" class="text-sm font-medium" style="color: var(--brand-primary);">Voltar ao Portal</a>
+            </div>
+        </div>
+    </div>
+    <script>
+        const ADMIN_PASSWORD = 'admin';
+        const passwordInput = document.getElementById('password-input');
+        const passwordSubmit = document.getElementById('password-submit');
+        const passwordError = document.getElementById('password-error');
+        function checkPassword() {
+            if (passwordInput.value === ADMIN_PASSWORD) {
+                window.location.href = 'admin.html';
+            } else {
+                passwordError.classList.remove('hidden');
+                passwordInput.focus();
+            }
+        }
+        passwordSubmit.addEventListener('click', checkPassword);
+        passwordInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') { checkPassword(); } });
+    </script>
+</body>
+</html>
